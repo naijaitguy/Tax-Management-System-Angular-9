@@ -1,0 +1,42 @@
+
+
+<app-hearder></app-hearder>
+
+<div class="container">
+
+<h2 class="text-primary" style="padding: 20px;"> Welcome Admin </h2>
+<p *ngIf="!(UserModel$ | async)">  Loading data ...</p>
+
+<table *ngIf="(UserModel$ | async)?.length > 0" class="table table-responsive table-striped table-hover " >
+
+<thead>
+
+    <th>Email</th>
+    <th>Full Name</th>
+    <th>Phone Number</th>
+    <th>Registration Date</th>
+    <th >Action </th>
+</thead>
+<tbody>
+<tr *ngFor="let Admin of (UserModel$ | async)">
+
+  
+    
+    <td>{{Admin.Email}}</td>
+    <td>{{Admin.FullName}}</td>
+    <td>{{Admin.PhoneNo}}</td>
+    <td>{{Admin.Date}}</td>
+    <td>
+  <a [routerLink] ="['/Admin/ViewUser/', Admin.UserId]"> <button class="btn btn-success btn-sm"> View Detials</button> </a>  |
+  <a [routerLink] ="['/Admin/EditUser/', Admin.UserId]"> <button class="btn btn-primary btn-sm">Edit</button> </a> |
+     <button (click)="DeleteUser(Admin.UserId)" class="btn btn-danger btn-sm">Delete</button></td>
+</tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,26 @@
+
+    <app-user-header></app-user-header>
+
+    <app-user-slider></app-user-slider>
+<div class="container " style="margin-top: 20px; margin-bottom: 20px;" >
+
+<div class="row">
+    <div class="col-md-4">
+ <a [routerLink]= "['/User/Apply']" class="btn-block"> <button class="btn btn-primary btn-block">Apply For TAx</button></a>
+ <a [routerLink]= "['/User/Calculate']" class="btn-block"> <button class="btn btn-success btn-block"> Calculate Tax </button></a>
+ <a [routerLink]= "['/User/Profile', Id]" class="btn-block"> <button class="btn btn-danger btn-block">Manage Profile</button></a>
+ <a [routerLink]= "['/User/Paytax']" class="btn-block"> <button class="btn btn-primary btn-block" style="background-color:blueviolet;"> Pay Tax </button></a>
+
+    </div>
+
+
+    <div class="col-md-7">
+
+
+       <h2 class="text-primary">   Latest News </h2>
+    </div>
+   
+</div>
+
+</div>
+    <app-user-footer></app-user-footer>

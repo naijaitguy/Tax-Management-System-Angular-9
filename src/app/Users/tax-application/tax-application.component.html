@@ -1,0 +1,160 @@
+<app-user-header></app-user-header>
+
+<div class="container">
+
+        <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+
+        <h3 class="text-primary"> Application For Tax Identification Number (TIN)</h3>
+    
+    </div>
+    
+    
+    <form [formGroup] = "FormData" (ngSubmit)="ProcessForm()" > 
+       <div class="row">
+        
+            <div class="col-md-4">  
+    <div *ngIf="  RegisterdEmailError" class="alert alert-danger">
+      Email Address Not Found . Use the same Email used during Registration   </div>
+ <div *ngIf="Error" class="alert alert-danger"> The System Could Not Process your Application At the moment !   </div>
+ <div *ngIf="EmailError" class="alert alert-danger"> User With the same Email Adress Already Exist !   </div>
+ <div *ngIf="BVNError" class="alert alert-danger">  User With the same BVN Already Exist !   </div>
+ <div *ngIf="Succees" class="alert alert-success">  Application Successful    </div>
+
+
+<div *ngIf="Loading" class="alert alert-success"> Loading.............. </div>
+
+                 <div class=" form-group">
+                    <label> Email Address </label>
+                         
+                     <input type="text" class="form-control" formControlName= "Email" placeholder="Enter Your Email Address">
+                  </div>
+
+                  <div *ngIf="Submitted && f.Email.errors" class="alert alert-danger">
+                     <span *ngIf="f.Email.errors.required">  Email Name Is required </span>
+                  </div>
+
+    
+    
+                <div class=" form-group">
+                    <label> Company Name </label>
+                         
+                     <input type="text" class="form-control" formControlName= "CompanyName" placeholder="Enter Your Company Name">
+                  </div>
+                  
+
+                  <div *ngIf="Submitted && f.CompanyName.errors" class="alert alert-danger">
+                     <span *ngIf="f.CompanyName.errors.required">  Company Name Is required </span>
+                  </div>
+                 
+
+                 <div class=" form-group">
+
+                    <label> Current Salary </label>
+                     <input type="text" class="form-control" formControlName= "CurrentSalary" placeholder="Enter Your Current Salary">
+                    </div>
+        
+                    <div *ngIf="Submitted && f.CurrentSalary.errors" class="alert alert-danger">
+                     <span *ngIf="f.CurrentSalary.errors.required">  Current Salary Is required </span>
+                  </div>
+    
+    
+    
+                  <div class=" form-group">
+                    <label> Company Physical Address </label>
+                         
+                     <input type="text" class="form-control" formControlName= "CompanyAddress" placeholder="Enter Your Company Addree">
+                  </div>
+
+                  <div *ngIf="Submitted && f.CompanyAddress.errors" class="alert alert-danger">
+                     <span *ngIf="f.CompanyAddress.errors.required">  Address Is required </span>
+                  </div>
+
+                 
+                  <div class=" form-group">
+                    <label> Company Phone Number </label>
+                         
+                     <input type="text" class="form-control" formControlName= "CompanyPhoneNo" placeholder="Enter Your Phone Number">
+                  </div>
+
+                  <div *ngIf="Submitted && f.CompanyPhoneNo.errors" class="alert alert-danger">
+                     <span *ngIf="f.CompanyPhoneNo.errors.required">  Phone Is required </span>
+                  </div>
+
+                 
+
+                  
+            </div>
+             
+    
+            <div class="col-md-4">
+    
+    
+      
+                  <div class=" form-group">
+                      <label> Staff ID </label>
+                           
+                       <input type="text" class="form-control" formControlName= "StaffId" placeholder="Enter Your User StaffID ">
+                    </div>
+      
+                    <div *ngIf="Submitted && f.StaffId.errors" class="alert alert-danger">
+                     <span *ngIf="f.StaffId.errors.required">  Staff ID Is required </span>
+                  </div>
+
+                  
+      
+                    <div class=" form-group">
+                      <label> BVN </label>
+                           
+                       <input type="text" class="form-control" formControlName= "Bvn" placeholder="Enter Your BVN">
+                    </div>
+    
+                   
+                    <div *ngIf="Submitted && f.Bvn.errors" class="alert alert-danger">
+                     <span *ngIf="f.Bvn.errors.required">  BVN Is required </span>
+                  </div>
+
+    
+                    <div class=" form-group">
+                        <label> Current Position </label>
+                             
+                         <input type="text" class="form-control" formControlName= "CurrentPositon" placeholder="Enter Your Current Position">
+                      </div>
+        
+
+                      <div *ngIf="Submitted && f.CurrentPositon.errors" class="alert alert-danger">
+                        <span *ngIf="f.CurrentPositon.errors.required">  Position Is required </span>
+                     </div>
+
+        
+                      <div class=" form-group">
+                        <label> Compay Website </label>
+                             
+                         <input type="text" class="form-control" formControlName= "CompanyWebsite" placeholder="Enter Your Company Website">
+                      </div>
+        
+
+                      <div *ngIf="Submitted && f.CompanyWebsite.errors" class="alert alert-danger">
+                        <span *ngIf="f.CompanyWebsite.errors.required"> Website Is required </span>
+                     </div>
+
+
+                      <div class=" form-group" style="margin-top: 100px;">
+                        
+                            
+                        <input type="submit" class="btn btn-success btn-block" value="Submit Application"> 
+                      </div>
+    
+               
+             
+            </div>
+    
+         
+    
+       </div>
+    
+    </form>
+     
+</div>
+
+
+<app-user-footer></app-user-footer>

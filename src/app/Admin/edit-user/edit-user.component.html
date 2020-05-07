@@ -1,0 +1,82 @@
+
+
+<app-hearder></app-hearder>
+
+<div class="container" style="margin-bottom: 40px;">
+
+      <h2 class="text-primary" style="padding: 20px;"> Update User Infomation  </h2>
+
+
+      
+ <div class="card col-md-5 bg-light">
+   
+    
+    <div class="card-body">
+        <div *ngIf="Loading " class="alert alert-success"> Loading....... </div>
+        <div *ngIf="Error" class="alert alert-danger"> Could Not Update </div>
+    <form [formGroup] ="FormData" (ngSubmit) = "ProcessForm(FormData.value)" >
+
+    <div class="form-group">
+
+                <label> Email: </label>
+
+                <input type="text" class="form-control" formControlName="Email" >
+
+    </div>
+
+    <div *ngIf="Submitted && f.Email.errors " class="alert alert-danger">
+   <span *ngIf="f.Email.errors.required " > Email is Required </span>
+   <span *ngIf="f.Email.errors.email" > Invalid Email </span>
+    </div>
+
+    <div class="form-group">
+
+        <label> Full Name: </label>
+
+         <input type="text" class="form-control" formControlName="FullName" >
+
+      </div>
+      <div *ngIf="Submitted && f.FullName.errors " class="alert alert-danger">
+        <span *ngIf="f.FullName.errors.required " > FullName is Required </span>
+         </div>
+
+
+    <div class="form-group">
+
+        <label> User Name: </label>
+
+         <input type="text" class="form-control" formControlName="UserName" >
+
+    </div>
+    <div *ngIf="Submitted && f.UserName.errors " class="alert alert-danger">
+        <span *ngIf="f.UserName.errors.required " > UserName is Required </span>
+        <span *ngIf="f.UserName.errors.minlength " > UserName Most Be more than 3 characters </span>
+         </div>
+
+
+    <div class="form-group">
+
+        <label> Password: </label>
+
+         <input type="password" class="form-control" formControlName="Password" >
+
+        </div>
+
+        <div *ngIf="Submitted && f.Password.errors " class="alert alert-danger">
+            <span *ngIf="f.Password.errors.required " > Password is Required </span>
+            <span *ngIf="f.Password.errors.minlength " > Password Most Be more than 6 characters </span>
+             </div>
+
+        <div class="form-group">
+
+        <input type="submit" class="btn btn-primary" value="Save Update">
+    
+            </div>
+    </form>
+    </div>
+     </div>
+
+</div>
+
+
+<app-footer></app-footer>
